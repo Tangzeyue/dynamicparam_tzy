@@ -1,0 +1,8 @@
+prefix=/home/tzy/a_ws_tzy/competition_tzy/dynamicparam_tz1/src/dynamic_param/cmake-build-debug/devel
+
+Name: dynamic_param
+Description: Description of dynamic_param
+Version: 0.0.0
+Cflags: -I/home/tzy/a_ws_tzy/competition_tzy/dynamicparam_tz1/src/dynamic_param/cmake-build-debug/devel/include -I/home/tzy/a_ws_tzy/competition_tzy/dynamicparam_tz1/src/dynamic_param/include
+Libs: -L${prefix}/lib 
+Requires: dynamic_reconfigure roscpp rospy dynamic_param_msgs

@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+from rosparam_handler.parameter_generator_catkin import *
+gen = ParameterGenerator()
+
+# gen.add("params_lock", paramtype="bool", description="lock of params", default=True, configurable=True)
+# gen.add("str_param",    str_t,    0, "A string parameter",  "Hello World")
+
+# related to constrained speed
+gen.add(name="v_max_kmh",    paramtype="int",    level=0, description="Integer: the first maximum speed constraint: kmh", default=20,  min=0, max=36,configurable=True)
+gen.add(name="v_mid_kmh",    paramtype="int",    level=0, description="Integer: the second maximum speed constraint: kmh", default=10,  min=0, max=30,configurable=True)
+gen.add(name="v_min_kmh",    paramtype="int",    level=0, description="Integer: the third maximum speed constraint: kmh", default=5,  min=0, max=30,configurable=True)
+
+gen.add(name="vmax_length_m",    paramtype="int",    level=0, description="Integer: the first maximum length constraint: m", default=10,  min=0, max=100,configurable=True)
+gen.add(name="vmid_length_m",    paramtype="int",    level=0, description="Integer: the second maximum length constraint: m", default=5,  min=0, max=100,configurable=True)
+gen.add(name="vmin_length_m",    paramtype="int",    level=0, description="Integer: the third maximum length constraint: m", default=3,  min=0, max=100,configurable=True)
+gen.add(name="stop_dist_m",    paramtype="int",    level=0, description="Integer: the stop distance constraint: m", default=3,  min=0, max=100,configurable=True)
+gen.add(name="roadwidth_m",    paramtype="double",    level=0, description="Integer: the road width constraint: m", default=1.0,  min=0, max=20.0)
+
+# related to lobal planning
+gen.add(name="is_foggy",   paramtype="bool",   level=0, description="Boolean: the flag of is-foggy",  default="False",configurable=True )
+gen.add(name="re_planning",   paramtype="bool",   level=0, description="Boolean: the flag of re-planning",  default="False",configurable=True)
+gen.add(name="dynamic_obstacle",   paramtype="bool",   level=0, description="Boolean: the flag of dynamic_obstacle",  default="False",configurable=True )
+gen.add(name="vehicle_meeting",   paramtype="bool",   level=0, description="Boolean: the flag of vehicle_meeting",  default="False",configurable=True)
+gen.add(name="vehicle_overtaking",   paramtype="bool",   level=0, description="Boolean: the flag of vehicle_overtaking",  default="False",configurable=True)
+
+exit(gen.generate("dynamic_param", "dynamic_param", "test"))
